@@ -9,6 +9,7 @@ public class ReadAnagram {
 		String path = "D:\\Desktop\\Programas\\Senac\\Pure\\AnagramasNoTxt\\anagram.txt";
 		String anagrama = "anagrama";
 		Integer anagramaLength = anagrama.length();
+		String[] vectSplitAnagram = anagrama.split("");
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String line = "entra";
 			Integer vectLength = 0;
@@ -18,7 +19,21 @@ public class ReadAnagram {
 				for (String i : vect) {
 					vectLength = i.length();
 					if (vectLength != null && vectLength == anagramaLength) {
-						System.out.println("tem mesma quantidade");
+						System.out.println("pode ser um anagrama");
+						String[] vectSplit = i.split("");
+						for (String x : vectSplitAnagram) {
+							for (String z : vectSplit) {
+								if (x != z) {
+
+									System.out.println("Não é letra igual");
+
+									// i.splice encontrar o equivalente do splice
+								} else {
+									Integer index = i.indexOf(z);
+									System.out.println("Tem letra igual");
+								}
+							}
+						}
 					}
 				}
 
