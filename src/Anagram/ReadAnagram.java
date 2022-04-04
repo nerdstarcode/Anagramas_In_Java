@@ -3,6 +3,7 @@ package src.Anagram;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import src.Compare.CompareString;
 
 public class ReadAnagram {
 	public static void main(String[] args) {
@@ -22,15 +23,14 @@ public class ReadAnagram {
 						System.out.println("pode ser um anagrama");
 						String[] vectSplit = i.split("");
 						for (String x : vectSplitAnagram) {
-							for (String z : vectSplit) {
-								if (x != z) {
-
-									System.out.println("Não é letra igual");
-
-									// i.splice encontrar o equivalente do splice
-								} else {
-									Integer index = i.indexOf(z);
+							for (String y : vectSplit) {
+								if (CompareString.stringCompare(x, y) == 0) {
+									Integer index = i.indexOf(y);
 									System.out.println("Tem letra igual");
+									// i.splice encontrar o equivalente do splice
+									break;
+								} else {
+									System.out.println("Não é letra igual");
 								}
 							}
 						}
